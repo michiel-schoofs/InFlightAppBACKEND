@@ -14,6 +14,11 @@ namespace InFlightAppBACKEND.Data.Mappers
         {
             builder.ToTable("TravelGroup");
             builder.HasKey(tg => tg.TravelGroupId);
+            builder.HasOne(tg => tg.Conversation)
+                .WithOne()
+                .IsRequired()
+                .HasForeignKey<Conversation>(c=>c.TravelGroupId)
+                .OnDelete(DeleteBehavior.Cascade);
             builder.HasMany(tg => tg.Passengers)
                 .WithOne(p => p.TravelGroup)
                 .IsRequired(false)

@@ -10,19 +10,16 @@ namespace InFlightAppBACKEND.Models.Domain
         public Seat Seat { get; set; }
         public TravelGroup TravelGroup { get; set; }
         public ICollection<Order> Orders { get; set; }
-        public ICollection<PassengerConversation> PassengerConversations { get; set; }
 
         protected Passenger() : base()
         {
             Orders = new List<Order>();
-            PassengerConversations = new List<PassengerConversation>();
         }
 
         public Passenger(string firstName, string lastName)
         : base(firstName, lastName)
         {
             Orders = new List<Order>();
-            PassengerConversations = new List<PassengerConversation>();
         }
 
         public override void AddOrder(Order order)
