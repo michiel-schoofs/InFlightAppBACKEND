@@ -8,6 +8,7 @@ namespace InFlightAppBACKEND.Models.Domain
     public class Passenger : User
     {
         public Seat Seat { get; set; }
+        public TravelGroup TravelGroup { get; set; }
         public ICollection<Order> Orders { get; set; }
 
         protected Passenger() : base()
@@ -15,11 +16,13 @@ namespace InFlightAppBACKEND.Models.Domain
             Orders = new List<Order>();
         }
 
-        public Passenger(string firstName, string lastName, Seat seat)
+        public Passenger(string firstName, string lastName, Seat seat, TravelGroup travelGroup)
         : base(firstName, lastName)
         {
-            Orders = new List<Order>();
             Seat = seat;
+            TravelGroup = travelGroup;
+            Orders = new List<Order>();
+
         }
 
         public override void AddOrder(Order order)
