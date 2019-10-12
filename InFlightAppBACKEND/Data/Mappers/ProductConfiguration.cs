@@ -1,6 +1,7 @@
 ﻿using InFlightAppBACKEND.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace InFlightAppBACKEND.Data.Mappers
             builder.Property(p => p.Description).IsRequired();
             builder.Property(p => p.UnitPrice).IsRequired();
             builder.Property(p => p.UnitPrice).IsRequired();
+            builder.Property(p => p.Type).HasConversion<EnumToStringConverter<ProductType>>().IsRequired();
         }
     }
 }
