@@ -8,20 +8,17 @@ namespace InFlightAppBACKEND.Models.Domain
     public class Conversation
     {
         public int ConversationId { get; set; }
-        public ICollection<PassengerConversation> PassengerConversations { get; set; }
+        public int TravelGroupId { get; set; }
         public ICollection<Message> Messages { get; set; }
 
         public Conversation()
         {
-            PassengerConversations = new List<PassengerConversation>();
             Messages = new List<Message>();
         }
-        
-        public void AddPassengerConversation(Passenger passenger)
-        {
-            PassengerConversation pc = new PassengerConversation(passenger, this);
-            PassengerConversations.Add(pc);
-        }
 
+        public void sendMessage(Passenger sender, string content)
+        {
+            Messages.Add(new Message(this, sender, content));
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace InFlightAppBACKEND.Data.Mappers
             builder.HasKey(o => o.OrderId);
             builder.Property(o => o.PassengerId).IsRequired();
             builder.Property(o => o.OrderDate).IsRequired();
+            builder.Property(o => o.IsDone).IsRequired();
         }
     }
 }

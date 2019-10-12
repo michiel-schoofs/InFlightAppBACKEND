@@ -84,6 +84,25 @@ namespace InFlightAppBACKEND.Data
                 flight1.AddSeat(seat10);
                 #endregion
 
+                #region Travelgroup
+                TravelGroup travelGroup1 = new TravelGroup(new List<Passenger> { passenger1, passenger2, passenger3 });
+                _dbContext.TravelGroups.Add(travelGroup1);
+                #endregion
+
+                #region Order
+                Order order1 = new Order(passenger1.UserId);
+                order1.AddOrderLine(product1, 2);
+                order1.AddOrderLine(product2, 1);
+                _dbContext.Orders.Add(order1);
+                #endregion
+
+                #region Conversation
+
+                #region Message
+
+                #endregion
+                #endregion
+
                 _dbContext.SaveChanges();
             }
         }

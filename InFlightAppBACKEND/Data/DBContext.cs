@@ -21,7 +21,6 @@ namespace InFlightAppBACKEND.Data
             builder.ApplyConfiguration(new OrderConfiguration());
             builder.ApplyConfiguration(new OrderLineConfiguration());
             builder.ApplyConfiguration(new PassengerConfiguration());
-            builder.ApplyConfiguration(new PassengerConversationConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new SeatConfiguration());
             builder.ApplyConfiguration(new TravelGroupConfiguration());
@@ -33,5 +32,6 @@ namespace InFlightAppBACKEND.Data
         public DbSet<Conversation> Conversations { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<TravelGroup> TravelGroups { get; set; }
     }
 }

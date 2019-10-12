@@ -10,6 +10,7 @@ namespace InFlightAppBACKEND.Models.Domain
         public int OrderId { get; set; }
         public int PassengerId { get; set; }
         public DateTime OrderDate { get; set; }
+        public Boolean IsDone { get; set; }
         public ICollection<OrderLine> OrderLines { get; set; }
 
         protected Order()
