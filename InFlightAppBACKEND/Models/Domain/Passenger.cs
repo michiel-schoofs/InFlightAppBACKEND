@@ -31,5 +31,13 @@ namespace InFlightAppBACKEND.Models.Domain
         {
             Orders.Remove(order);
         }
+
+        public void sendMessage(string content)
+        {
+            if (TravelGroup != null)
+            {
+                TravelGroup.sendMessage(this, content);
+            }
+        }
     }
 }
