@@ -8,6 +8,7 @@ namespace InFlightAppBACKEND.Models.Domain
     public class Flight
     {
         public int FlightId { get; set; }
+        public string FlightNr { get; set; }
         public string Plane { get; set; }
         public DateTime DepartureTime { get; set; }
         public DateTime ArrivalTime { get; set; }
@@ -25,14 +26,20 @@ namespace InFlightAppBACKEND.Models.Domain
             Seats = new List<Seat>();
         }
 
-        public Flight(string plane, DateTime departureTime, DateTime arrivalTime, string origin, string destination)
+        public Flight(string flightNr, string plane, DateTime departureTime, DateTime arrivalTime, string origin, string destination)
         {
+            FlightNr = flightNr;
             Plane = plane;
             DepartureTime = departureTime;
             ArrivalTime = arrivalTime;
             Origin = origin;
             Destination = destination;
             Seats = new List<Seat>();
+        }
+
+        public void AddSeat(Seat seat)
+        {
+            Seats.Add(seat);
         }
 
     }

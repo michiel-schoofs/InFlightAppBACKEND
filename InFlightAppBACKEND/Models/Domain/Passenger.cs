@@ -18,11 +18,9 @@ namespace InFlightAppBACKEND.Models.Domain
             PassengerConversations = new List<PassengerConversation>();
         }
 
-        public Passenger(string firstName, string lastName, Seat seat, TravelGroup travelGroup)
+        public Passenger(string firstName, string lastName)
         : base(firstName, lastName)
         {
-            Seat = seat;
-            TravelGroup = travelGroup;
             Orders = new List<Order>();
             PassengerConversations = new List<PassengerConversation>();
         }
