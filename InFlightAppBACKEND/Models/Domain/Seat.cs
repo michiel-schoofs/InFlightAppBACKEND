@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace InFlightAppBACKEND.Models.Domain
 {
-    public class Catalogue
+    public class Seat
     {
     }
 }
