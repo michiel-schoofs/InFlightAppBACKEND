@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace InFlightAppBACKEND.Models.Domain
 {
-    public class Seat
+    public enum SeatType
     {
-        public int SeatId { get; set; }
+        ECONOMY,
+        BUSINESS,
+        FIRST_CLASS
     }
 }
