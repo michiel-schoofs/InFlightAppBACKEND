@@ -23,9 +23,7 @@ namespace InFlightAppBACKEND.Data
             builder.ApplyConfiguration(new PassengerConfiguration());
             builder.ApplyConfiguration(new PassengerConversationConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());
-            builder.ApplyConfiguration(new ProductTypeConfiguration());
             builder.ApplyConfiguration(new SeatConfiguration());
-            builder.ApplyConfiguration(new SeatTypeConfiguration());
             builder.ApplyConfiguration(new TravelGroupConfiguration());
         }
 

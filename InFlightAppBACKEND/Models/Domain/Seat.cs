@@ -8,18 +8,17 @@ namespace InFlightAppBACKEND.Models.Domain
     public class Seat
     {
         public int SeatId { get; set; }
-        public SeatType SeatType { get; set; }
-        public int PassengerId { get; set; }
+        public SeatType Type { get; set; }
+        public Passenger Passenger { get; set; }
 
         protected Seat()
         {
 
         }
 
-        public Seat(SeatType seatType, int passengerId)
+        public Seat(SeatType type, Passenger passenger)
         {
-            SeatType = seatType;
-            PassengerId = passengerId;
+            Passenger = passenger;
         }
     }
 }
