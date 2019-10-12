@@ -16,8 +16,8 @@ namespace InFlightAppBACKEND.Data.Mappers
             builder.HasKey(tg => tg.TravelGroupId);
             builder.HasMany(tg => tg.Passengers)
                 .WithOne(p => p.TravelGroup)
-                .HasForeignKey(p => p.TravelGroup)
-                .IsRequired(false);
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

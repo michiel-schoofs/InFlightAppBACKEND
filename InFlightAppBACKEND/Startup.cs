@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using InFlightAppBACKEND.Data;
+﻿using InFlightAppBACKEND.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+
 
 namespace InFlightAppBACKEND
 {
@@ -38,7 +33,6 @@ namespace InFlightAppBACKEND
             });
             #endregion
 
-
             #region Dependency Injections
             services.AddScoped<DBInitializer>();
             #endregion
@@ -48,7 +42,10 @@ namespace InFlightAppBACKEND
             #endregion
 
             #region Default identity
-
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<DBContext>();
             #endregion
 
             #region Authentication

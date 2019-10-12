@@ -14,6 +14,7 @@ namespace InFlightAppBACKEND.Data.Mappers
         {
             builder.ToTable("Flight");
             builder.HasKey(f => f.FlightId);
+            builder.Property(f => f.FlightNr).IsRequired();
             builder.Property(f => f.Plane).IsRequired();
             builder.Property(f => f.DepartureTime).IsRequired();
             builder.Property(f => f.ArrivalTime).IsRequired();

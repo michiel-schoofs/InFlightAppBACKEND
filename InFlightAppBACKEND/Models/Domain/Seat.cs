@@ -9,6 +9,7 @@ namespace InFlightAppBACKEND.Models.Domain
     {
         public int SeatId { get; set; }
         public int FlightId { get; set; }
+        public int? PassengerId { get; set; }
         public SeatType Type { get; set; }
         public Passenger Passenger { get; set; }
 
@@ -19,6 +20,7 @@ namespace InFlightAppBACKEND.Models.Domain
 
         public Seat(SeatType type, Passenger passenger)
         {
+            Type = type;
             Passenger = passenger;
         }
     }
