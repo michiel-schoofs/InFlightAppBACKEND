@@ -15,6 +15,7 @@ namespace InFlightAppBACKEND.Data.Mappers
             builder.HasKey(m => m.MessageId);
             builder.Property(m => m.ConversationId).IsRequired();
             builder.Property(m => m.SenderId).IsRequired();
+            builder.Property(m => m.Content).IsRequired();
             builder.Property(m => m.DateSent).IsRequired();
         }
     }

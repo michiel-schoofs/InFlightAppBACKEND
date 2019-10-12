@@ -16,11 +16,12 @@ namespace InFlightAppBACKEND.Data.Mappers
             builder.HasKey(p => p.UserId);
             builder.Property(p => p.FirstName).IsRequired();
             builder.Property(p => p.LastName).IsRequired();
+            builder.Property(p => p.Seat).IsRequired();
             builder.Property(p => p.TravelGroup).IsRequired(false);
             builder.HasMany(p => p.Orders)
                 .WithOne()
                 .IsRequired()
-                .HasForeignKey(c => c.PassengerId)
+                .HasForeignKey(o => o.PassengerId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

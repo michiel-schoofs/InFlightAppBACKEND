@@ -15,6 +15,7 @@ namespace InFlightAppBACKEND.Data.Mappers
         {
             builder.ToTable("Seat");
             builder.HasKey(s => s.SeatId);
+            builder.Property(s => s.FlightId).IsRequired();
             builder.Property(s => s.Type).HasConversion<EnumToStringConverter<SeatType>>().IsRequired();
             builder.HasOne(s => s.Passenger)
                 .WithOne(p => p.Seat)
