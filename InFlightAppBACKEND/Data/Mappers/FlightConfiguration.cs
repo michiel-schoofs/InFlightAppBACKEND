@@ -22,6 +22,7 @@ namespace InFlightAppBACKEND.Data.Mappers
             builder.HasMany(f => f.Seats)
                 .WithOne()
                 .IsRequired()
+                .HasForeignKey(s=>s.FlightId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

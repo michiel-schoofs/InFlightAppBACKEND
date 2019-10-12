@@ -15,8 +15,8 @@ namespace InFlightAppBACKEND.Data.Mappers
         {
             builder.ToTable("Product");
             builder.HasKey(p => p.ProductId);
+            builder.Property(p => p.Name).IsRequired();
             builder.Property(p => p.Description).IsRequired();
-            builder.Property(p => p.UnitPrice).IsRequired();
             builder.Property(p => p.UnitPrice).IsRequired();
             builder.Property(p => p.Type).HasConversion<EnumToStringConverter<ProductType>>().IsRequired();
         }
