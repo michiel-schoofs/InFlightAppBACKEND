@@ -79,8 +79,14 @@ namespace InFlightAppBACKEND
             }
 
             app.UseHttpsRedirection();
+
             app.UseAuthentication();
+
             app.UseMvc();
+
+            app.UseSwaggerUi3();
+            app.UseOpenApi();
+
             app.UseCors("AllowAllOrigins");
         }
     }
