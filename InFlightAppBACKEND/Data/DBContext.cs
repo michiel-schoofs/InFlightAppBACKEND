@@ -29,7 +29,6 @@ namespace InFlightAppBACKEND.Data
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet<CrewMember> CrewMembers { get; set; }
-        public DbSet<Conversation> Conversations { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<TravelGroup> TravelGroups { get; set; }

@@ -96,11 +96,11 @@ namespace InFlightAppBACKEND.Data
                 _dbContext.Orders.Add(order1);
                 #endregion
 
-                #region Conversation
-
                 #region Message
-
-                #endregion
+                passenger1.sendMessage("Hey!");
+                passenger2.sendMessage("Hey Tybo :)");
+                passenger3.sendMessage("Lekker geslapen, Tybo?");
+                passenger1.sendMessage("Ja hoor!");
                 #endregion
 
                 _dbContext.SaveChanges();
