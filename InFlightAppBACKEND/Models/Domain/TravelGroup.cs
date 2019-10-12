@@ -23,5 +23,9 @@ namespace InFlightAppBACKEND.Models.Domain
             Conversation = new Conversation();
         }
 
+        public void sendMessage(Passenger passenger, string content)
+        {
+            Conversation.sendMessage(passenger, content);
+        }
     }
 }
