@@ -8,7 +8,7 @@ namespace InFlightAppBACKEND.Data
     public class DBContext : IdentityDbContext
     {
         public DBContext(DbContextOptions options) : base(options)
-        {
+        {''
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
