@@ -10,7 +10,8 @@ namespace InFlightAppBACKEND.Data.Repositories
     {
         IEnumerable<Passenger> GetAll();
         IEnumerable<Order> GetOrdersFromPassenger(int id);
-        Passenger GetById();
+        Passenger GetById(int id);
+        int GetSeatNumberFromPassenger(int id);
         void Add(Passenger passenger);
         void Remove(Passenger passenger);
         void SaveChanges();
